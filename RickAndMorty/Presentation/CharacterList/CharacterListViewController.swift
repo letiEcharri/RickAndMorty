@@ -13,7 +13,8 @@ protocol CharacterListViewControllerContract: AnyObject {
     func changeViewState(_ state: CharacterListViewModel.ViewState)
 }
 
-class CharacterListViewController: UIViewController {
+class CharacterListViewController: UIViewController, ActivityIndicatorPresenter {
+    var activityIndicator = UIActivityIndicatorView()
     var viewModel: CharacterListViewModelContract
     
     // MARK: - Life cycle
@@ -26,6 +27,11 @@ class CharacterListViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("Storyboard are a pain")
     }
+    
+    override func loadView() {
+        super.loadView()
+        setupViews()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +42,21 @@ class CharacterListViewController: UIViewController {
     }
 }
 
+private extension CharacterListViewController {
+    func setupViews() {
+        view.backgroundColor = .white
+    }
+}
+
 extension CharacterListViewController: CharacterListViewControllerContract {
     func changeViewState(_ state: CharacterListViewModel.ViewState) {
         switch state {
         case .clear:
             break
+        case .showLoader:
+            showActivityIndicator()
+        case .hideLoader:
+            hideActivityIndicator()
         }
     }
 }

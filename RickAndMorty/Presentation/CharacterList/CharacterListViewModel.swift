@@ -14,10 +14,21 @@ protocol CharacterListViewModelContract {
 class CharacterListViewModel {
     enum ViewState: Equatable {
         case clear
+        case showLoader
+        case hideLoader
     }
     
     struct UseCases {
         let getAllCharacters: GetCharactersUseCaseContract
+    }
+    
+    var viewState: ViewState = .clear {
+        didSet {
+            guard oldValue != viewState else {
+                preconditionFailure("If states were correctly implemented, this wouldn't have happened. 😒")
+            }
+            viewController?.changeViewState(viewState)
+        }
     }
     
     weak private var coordinator: CoordinatorContract?
@@ -32,8 +43,10 @@ class CharacterListViewModel {
 
 extension CharacterListViewModel: CharacterListViewModelContract {
     func viewDidLoad() async {
+        viewState = .showLoader
         do {
             let characters = try await useCases.getAllCharacters.execute()
+            viewState = .hideLoader
         } catch {
             print(error)
         }

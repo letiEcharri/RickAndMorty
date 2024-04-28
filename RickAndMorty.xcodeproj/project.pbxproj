@@ -29,6 +29,7 @@
 		B8F1C4522BDEF24E00674BDB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4512BDEF24E00674BDB /* Coordinator.swift */; };
 		B8F1C4552BDEF3AB00674BDB /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4542BDEF3AB00674BDB /* CharacterListViewModel.swift */; };
 		B8F1C4572BDEF55E00674BDB /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4562BDEF55E00674BDB /* CharacterListViewController.swift */; };
+		B8F1C45B2BDEFCD700674BDB /* ActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C45A2BDEFCD700674BDB /* ActivityIndicatorPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		B8F1C4512BDEF24E00674BDB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B8F1C4542BDEF3AB00674BDB /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
 		B8F1C4562BDEF55E00674BDB /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
+		B8F1C45A2BDEFCD700674BDB /* ActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				B8F1C4512BDEF24E00674BDB /* Coordinator.swift */,
+				B8F1C45A2BDEFCD700674BDB /* ActivityIndicatorPresenter.swift */,
 				B8F1C4532BDEF38700674BDB /* CharacterList */,
 			);
 			path = Presentation;
@@ -419,6 +422,7 @@
 				B8F1C4572BDEF55E00674BDB /* CharacterListViewController.swift in Sources */,
 				B8F1C4392BDECDC000674BDB /* BaseRepository.swift in Sources */,
 				B8F1C42D2BDEC7FA00674BDB /* DataSource.swift in Sources */,
+				B8F1C45B2BDEFCD700674BDB /* ActivityIndicatorPresenter.swift in Sources */,
 				B8F1C4342BDECC2A00674BDB /* CharacterEntity.swift in Sources */,
 				B8F1C4372BDECCE300674BDB /* CharacterRepository.swift in Sources */,
 				B8F1C43E2BDED24C00674BDB /* CharacterModel.swift in Sources */,
