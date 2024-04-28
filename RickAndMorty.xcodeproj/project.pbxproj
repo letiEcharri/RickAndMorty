@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B8F1C3F82BDEC2D400674BDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C3F72BDEC2D400674BDB /* AppDelegate.swift */; };
 		B8F1C3FA2BDEC2D400674BDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C3F92BDEC2D400674BDB /* SceneDelegate.swift */; };
-		B8F1C3FC2BDEC2D400674BDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C3FB2BDEC2D400674BDB /* ViewController.swift */; };
 		B8F1C4012BDEC2D700674BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F1C4002BDEC2D700674BDB /* Assets.xcassets */; };
 		B8F1C4042BDEC2D700674BDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F1C4022BDEC2D700674BDB /* LaunchScreen.storyboard */; };
 		B8F1C4192BDEC2D700674BDB /* RickAndMortyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4182BDEC2D700674BDB /* RickAndMortyUITests.swift */; };
@@ -27,6 +26,9 @@
 		B8F1C44A2BDEEBB600674BDB /* CharacterRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4492BDEEBB600674BDB /* CharacterRepositoryTests.swift */; };
 		B8F1C44D2BDEEEAB00674BDB /* CharacterRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C44C2BDEEEAB00674BDB /* CharacterRepositoryMock.swift */; };
 		B8F1C44F2BDEEF5C00674BDB /* GetCharactersUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C44E2BDEEF5C00674BDB /* GetCharactersUseCaseTests.swift */; };
+		B8F1C4522BDEF24E00674BDB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4512BDEF24E00674BDB /* Coordinator.swift */; };
+		B8F1C4552BDEF3AB00674BDB /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4542BDEF3AB00674BDB /* CharacterListViewModel.swift */; };
+		B8F1C4572BDEF55E00674BDB /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4562BDEF55E00674BDB /* CharacterListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,6 @@
 		B8F1C3F42BDEC2D400674BDB /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F1C3F72BDEC2D400674BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8F1C3F92BDEC2D400674BDB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B8F1C3FB2BDEC2D400674BDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8F1C4002BDEC2D700674BDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8F1C4032BDEC2D700674BDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8F1C4052BDEC2D700674BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,6 +71,9 @@
 		B8F1C4492BDEEBB600674BDB /* CharacterRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryTests.swift; sourceTree = "<group>"; };
 		B8F1C44C2BDEEEAB00674BDB /* CharacterRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryMock.swift; sourceTree = "<group>"; };
 		B8F1C44E2BDEEF5C00674BDB /* GetCharactersUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersUseCaseTests.swift; sourceTree = "<group>"; };
+		B8F1C4512BDEF24E00674BDB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B8F1C4542BDEF3AB00674BDB /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
+		B8F1C4562BDEF55E00674BDB /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,11 +125,11 @@
 		B8F1C3F62BDEC2D400674BDB /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				B8F1C4502BDEF11900674BDB /* Presentation */,
 				B8F1C43A2BDED21A00674BDB /* Domain */,
 				B8F1C42B2BDEC7D400674BDB /* Data */,
 				B8F1C3F72BDEC2D400674BDB /* AppDelegate.swift */,
 				B8F1C3F92BDEC2D400674BDB /* SceneDelegate.swift */,
-				B8F1C3FB2BDEC2D400674BDB /* ViewController.swift */,
 				B8F1C4002BDEC2D700674BDB /* Assets.xcassets */,
 				B8F1C4022BDEC2D700674BDB /* LaunchScreen.storyboard */,
 				B8F1C4052BDEC2D700674BDB /* Info.plist */,
@@ -253,6 +257,24 @@
 				B8F1C44C2BDEEEAB00674BDB /* CharacterRepositoryMock.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		B8F1C4502BDEF11900674BDB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B8F1C4512BDEF24E00674BDB /* Coordinator.swift */,
+				B8F1C4532BDEF38700674BDB /* CharacterList */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B8F1C4532BDEF38700674BDB /* CharacterList */ = {
+			isa = PBXGroup;
+			children = (
+				B8F1C4542BDEF3AB00674BDB /* CharacterListViewModel.swift */,
+				B8F1C4562BDEF55E00674BDB /* CharacterListViewController.swift */,
+			);
+			path = CharacterList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,8 +413,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8F1C3FC2BDEC2D400674BDB /* ViewController.swift in Sources */,
+				B8F1C4552BDEF3AB00674BDB /* CharacterListViewModel.swift in Sources */,
 				B8F1C3F82BDEC2D400674BDB /* AppDelegate.swift in Sources */,
+				B8F1C4522BDEF24E00674BDB /* Coordinator.swift in Sources */,
+				B8F1C4572BDEF55E00674BDB /* CharacterListViewController.swift in Sources */,
 				B8F1C4392BDECDC000674BDB /* BaseRepository.swift in Sources */,
 				B8F1C42D2BDEC7FA00674BDB /* DataSource.swift in Sources */,
 				B8F1C4342BDECC2A00674BDB /* CharacterEntity.swift in Sources */,
