@@ -33,6 +33,7 @@
 		B8F1C45E2BDEFF5400674BDB /* CharacterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C45D2BDEFF5400674BDB /* CharacterListCell.swift */; };
 		B8F1C4612BDF005700674BDB /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4602BDF005700674BDB /* UIView+Utils.swift */; };
 		B8F1C4632BDF085700674BDB /* UITableViewCell+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4622BDF085700674BDB /* UITableViewCell+Utils.swift */; };
+		B8F1C4652BDF0D8400674BDB /* UIImageView+UrlImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4642BDF0D8400674BDB /* UIImageView+UrlImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		B8F1C45D2BDEFF5400674BDB /* CharacterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCell.swift; sourceTree = "<group>"; };
 		B8F1C4602BDF005700674BDB /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		B8F1C4622BDF085700674BDB /* UITableViewCell+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Utils.swift"; sourceTree = "<group>"; };
+		B8F1C4642BDF0D8400674BDB /* UIImageView+UrlImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+UrlImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 			children = (
 				B8F1C4602BDF005700674BDB /* UIView+Utils.swift */,
 				B8F1C4622BDF085700674BDB /* UITableViewCell+Utils.swift */,
+				B8F1C4642BDF0D8400674BDB /* UIImageView+UrlImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				B8F1C43E2BDED24C00674BDB /* CharacterModel.swift in Sources */,
 				B8F1C42F2BDEC95600674BDB /* RMDataSource.swift in Sources */,
 				B8F1C3FA2BDEC2D400674BDB /* SceneDelegate.swift in Sources */,
+				B8F1C4652BDF0D8400674BDB /* UIImageView+UrlImage.swift in Sources */,
 				B8F1C45E2BDEFF5400674BDB /* CharacterListCell.swift in Sources */,
 				B8F1C4402BDED2B500674BDB /* CharacterRepositoryContract.swift in Sources */,
 				B8F1C4442BDEE4CF00674BDB /* GetCharactersUseCase.swift in Sources */,

@@ -56,7 +56,7 @@ extension CharacterListViewModel: CharacterListViewModelContract {
 private extension CharacterListViewModel {
     func getCells(from list: [CharacterModel]) -> [CharacterListCell.Model] {
         list.compactMap { item in
-            CharacterListCell.Model(imageUrlString: item.url,
+            CharacterListCell.Model(imageUrlString: item.image,
                                     name: item.name,
                                     id: item.id)
         }

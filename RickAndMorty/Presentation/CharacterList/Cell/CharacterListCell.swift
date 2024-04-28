@@ -20,12 +20,16 @@ class CharacterListCell: UITableViewCell {
         static let cellPadding = ConstraintsConstants(constant: 10)
         static let imageSize: CGFloat = 50
         static let cornerRadius: CGFloat = 15
+        static let imageCornerRadius: CGFloat = 5
         static let borderWidth: CGFloat = 1
     }
 
     // MARK: Views
     private lazy var icon: UIImageView = {
         let imageView = UIImageView()
+        imageView.layer.cornerRadius = LayoutConstants.imageCornerRadius
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "userIcon")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.widthAnchor.constraint(equalToConstant: LayoutConstants.imageSize).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: LayoutConstants.imageSize).isActive = true
@@ -68,8 +72,15 @@ class CharacterListCell: UITableViewCell {
         backgroundColor = .clear
         selectionStyle = .none
         
-        let singleImage = UIImage(named: "userIcon")
-        icon.image = singleImage
+        if let url = URL(string: model.imageUrlString) {
+            Task {
+                do {
+                    try await icon.downloadImage(from: url)
+                } catch {
+                    print(error)
+                }
+            }
+        }
         titleLabel.text = model.name
         
         container.fit(to: containerView,
