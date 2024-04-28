@@ -21,7 +21,6 @@ class CharacterListCell: UITableViewCell {
         static let imageSize: CGFloat = 50
         static let cornerRadius: CGFloat = 15
         static let imageCornerRadius: CGFloat = 5
-        static let borderWidth: CGFloat = 1
     }
 
     // MARK: Views
@@ -60,8 +59,10 @@ class CharacterListCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = LayoutConstants.cornerRadius
-        view.layer.borderWidth = LayoutConstants.borderWidth
-        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.3
+        view.layer.shadowOffset = CGSize(width: 2, height: 2)
+        view.layer.shadowRadius = 10
         
         return view
     }()
