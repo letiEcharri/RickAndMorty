@@ -16,6 +16,13 @@
 		B8F1C4192BDEC2D700674BDB /* RickAndMortyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4182BDEC2D700674BDB /* RickAndMortyUITests.swift */; };
 		B8F1C41B2BDEC2D700674BDB /* RickAndMortyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C41A2BDEC2D700674BDB /* RickAndMortyUITestsLaunchTests.swift */; };
 		B8F1C42A2BDEC70700674BDB /* RickMortySwiftApi in Frameworks */ = {isa = PBXBuildFile; productRef = B8F1C4292BDEC70700674BDB /* RickMortySwiftApi */; };
+		B8F1C42D2BDEC7FA00674BDB /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C42C2BDEC7FA00674BDB /* DataSource.swift */; };
+		B8F1C42F2BDEC95600674BDB /* RMDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C42E2BDEC95600674BDB /* RMDataSource.swift */; };
+		B8F1C4342BDECC2A00674BDB /* CharacterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4332BDECC2A00674BDB /* CharacterEntity.swift */; };
+		B8F1C4372BDECCE300674BDB /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4362BDECCE300674BDB /* CharacterRepository.swift */; };
+		B8F1C4392BDECDC000674BDB /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4382BDECDC000674BDB /* BaseRepository.swift */; };
+		B8F1C43E2BDED24C00674BDB /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C43D2BDED24C00674BDB /* CharacterModel.swift */; };
+		B8F1C4402BDED2B500674BDB /* CharacterRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C43F2BDED2B500674BDB /* CharacterRepositoryContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,13 @@
 		B8F1C4142BDEC2D700674BDB /* RickAndMortyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F1C4182BDEC2D700674BDB /* RickAndMortyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyUITests.swift; sourceTree = "<group>"; };
 		B8F1C41A2BDEC2D700674BDB /* RickAndMortyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B8F1C42C2BDEC7FA00674BDB /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		B8F1C42E2BDEC95600674BDB /* RMDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMDataSource.swift; sourceTree = "<group>"; };
+		B8F1C4332BDECC2A00674BDB /* CharacterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEntity.swift; sourceTree = "<group>"; };
+		B8F1C4362BDECCE300674BDB /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
+		B8F1C4382BDECDC000674BDB /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
+		B8F1C43D2BDED24C00674BDB /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		B8F1C43F2BDED2B500674BDB /* CharacterRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +113,8 @@
 		B8F1C3F62BDEC2D400674BDB /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				B8F1C43A2BDED21A00674BDB /* Domain */,
+				B8F1C42B2BDEC7D400674BDB /* Data */,
 				B8F1C3F72BDEC2D400674BDB /* AppDelegate.swift */,
 				B8F1C3F92BDEC2D400674BDB /* SceneDelegate.swift */,
 				B8F1C3FB2BDEC2D400674BDB /* ViewController.swift */,
@@ -124,6 +140,67 @@
 				B8F1C41A2BDEC2D700674BDB /* RickAndMortyUITestsLaunchTests.swift */,
 			);
 			path = RickAndMortyUITests;
+			sourceTree = "<group>";
+		};
+		B8F1C42B2BDEC7D400674BDB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B8F1C4322BDECC0E00674BDB /* Repository */,
+				B8F1C4312BDECC0400674BDB /* Entity */,
+				B8F1C4302BDECB6700674BDB /* DataSource */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B8F1C4302BDECB6700674BDB /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				B8F1C42C2BDEC7FA00674BDB /* DataSource.swift */,
+				B8F1C42E2BDEC95600674BDB /* RMDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		B8F1C4312BDECC0400674BDB /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B8F1C4332BDECC2A00674BDB /* CharacterEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B8F1C4322BDECC0E00674BDB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B8F1C4362BDECCE300674BDB /* CharacterRepository.swift */,
+				B8F1C4382BDECDC000674BDB /* BaseRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		B8F1C43A2BDED21A00674BDB /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B8F1C43C2BDED23000674BDB /* Contract */,
+				B8F1C43B2BDED22200674BDB /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B8F1C43B2BDED22200674BDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B8F1C43D2BDED24C00674BDB /* CharacterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B8F1C43C2BDED23000674BDB /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				B8F1C43F2BDED2B500674BDB /* CharacterRepositoryContract.swift */,
+			);
+			path = Contract;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,7 +341,14 @@
 			files = (
 				B8F1C3FC2BDEC2D400674BDB /* ViewController.swift in Sources */,
 				B8F1C3F82BDEC2D400674BDB /* AppDelegate.swift in Sources */,
+				B8F1C4392BDECDC000674BDB /* BaseRepository.swift in Sources */,
+				B8F1C42D2BDEC7FA00674BDB /* DataSource.swift in Sources */,
+				B8F1C4342BDECC2A00674BDB /* CharacterEntity.swift in Sources */,
+				B8F1C4372BDECCE300674BDB /* CharacterRepository.swift in Sources */,
+				B8F1C43E2BDED24C00674BDB /* CharacterModel.swift in Sources */,
+				B8F1C42F2BDEC95600674BDB /* RMDataSource.swift in Sources */,
 				B8F1C3FA2BDEC2D400674BDB /* SceneDelegate.swift in Sources */,
+				B8F1C4402BDED2B500674BDB /* CharacterRepositoryContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
