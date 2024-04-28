@@ -11,15 +11,39 @@ import RickMortySwiftApi
 class RMDataSource {
     private var client = RMClient()
     
-    func character() -> RMCharacter {
+    private var character: RMCharacter {
         client.character()
     }
     
-    func episode() -> RMEpisode {
+    private var episode: RMEpisode {
         client.episode()
     }
     
-    func location() -> RMLocation {
+    private var location: RMLocation {
         client.location()
+    }
+    
+    // Functions
+    func getCharacters() async throws -> [CharacterEntity] {
+        do {
+            return try await character.getAllCharacters().compactMap { character in
+                CharacterEntity(id: character.id,
+                                name: character.name,
+                                status: character.status,
+                                species: character.species,
+                                type: character.type,
+                                gender: character.gender,
+                                origin: CharacterOriginEntity(name: character.origin.name,
+                                                              url: character.origin.url),
+                                location: CharacterLocationEntity(name: character.location.name,
+                                                                  url: character.location.url),
+                                image: character.image,
+                                episode: character.episode,
+                                url: character.url,
+                                created: character.created)
+            }
+        } catch {
+            throw error
+        }
     }
 }
