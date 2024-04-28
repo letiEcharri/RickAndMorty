@@ -30,6 +30,9 @@
 		B8F1C4552BDEF3AB00674BDB /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4542BDEF3AB00674BDB /* CharacterListViewModel.swift */; };
 		B8F1C4572BDEF55E00674BDB /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4562BDEF55E00674BDB /* CharacterListViewController.swift */; };
 		B8F1C45B2BDEFCD700674BDB /* ActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C45A2BDEFCD700674BDB /* ActivityIndicatorPresenter.swift */; };
+		B8F1C45E2BDEFF5400674BDB /* CharacterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C45D2BDEFF5400674BDB /* CharacterListCell.swift */; };
+		B8F1C4612BDF005700674BDB /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4602BDF005700674BDB /* UIView+Utils.swift */; };
+		B8F1C4632BDF085700674BDB /* UITableViewCell+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4622BDF085700674BDB /* UITableViewCell+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,9 @@
 		B8F1C4542BDEF3AB00674BDB /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
 		B8F1C4562BDEF55E00674BDB /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		B8F1C45A2BDEFCD700674BDB /* ActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorPresenter.swift; sourceTree = "<group>"; };
+		B8F1C45D2BDEFF5400674BDB /* CharacterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCell.swift; sourceTree = "<group>"; };
+		B8F1C4602BDF005700674BDB /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		B8F1C4622BDF085700674BDB /* UITableViewCell+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,7 @@
 				B8F1C4502BDEF11900674BDB /* Presentation */,
 				B8F1C43A2BDED21A00674BDB /* Domain */,
 				B8F1C42B2BDEC7D400674BDB /* Data */,
+				B8F1C45F2BDEFFFB00674BDB /* Extensions */,
 				B8F1C3F72BDEC2D400674BDB /* AppDelegate.swift */,
 				B8F1C3F92BDEC2D400674BDB /* SceneDelegate.swift */,
 				B8F1C4002BDEC2D700674BDB /* Assets.xcassets */,
@@ -274,10 +281,28 @@
 		B8F1C4532BDEF38700674BDB /* CharacterList */ = {
 			isa = PBXGroup;
 			children = (
+				B8F1C45C2BDEFF3A00674BDB /* Cell */,
 				B8F1C4542BDEF3AB00674BDB /* CharacterListViewModel.swift */,
 				B8F1C4562BDEF55E00674BDB /* CharacterListViewController.swift */,
 			);
 			path = CharacterList;
+			sourceTree = "<group>";
+		};
+		B8F1C45C2BDEFF3A00674BDB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B8F1C45D2BDEFF5400674BDB /* CharacterListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B8F1C45F2BDEFFFB00674BDB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B8F1C4602BDF005700674BDB /* UIView+Utils.swift */,
+				B8F1C4622BDF085700674BDB /* UITableViewCell+Utils.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,16 +443,19 @@
 			files = (
 				B8F1C4552BDEF3AB00674BDB /* CharacterListViewModel.swift in Sources */,
 				B8F1C3F82BDEC2D400674BDB /* AppDelegate.swift in Sources */,
+				B8F1C4612BDF005700674BDB /* UIView+Utils.swift in Sources */,
 				B8F1C4522BDEF24E00674BDB /* Coordinator.swift in Sources */,
 				B8F1C4572BDEF55E00674BDB /* CharacterListViewController.swift in Sources */,
 				B8F1C4392BDECDC000674BDB /* BaseRepository.swift in Sources */,
 				B8F1C42D2BDEC7FA00674BDB /* DataSource.swift in Sources */,
 				B8F1C45B2BDEFCD700674BDB /* ActivityIndicatorPresenter.swift in Sources */,
+				B8F1C4632BDF085700674BDB /* UITableViewCell+Utils.swift in Sources */,
 				B8F1C4342BDECC2A00674BDB /* CharacterEntity.swift in Sources */,
 				B8F1C4372BDECCE300674BDB /* CharacterRepository.swift in Sources */,
 				B8F1C43E2BDED24C00674BDB /* CharacterModel.swift in Sources */,
 				B8F1C42F2BDEC95600674BDB /* RMDataSource.swift in Sources */,
 				B8F1C3FA2BDEC2D400674BDB /* SceneDelegate.swift in Sources */,
+				B8F1C45E2BDEFF5400674BDB /* CharacterListCell.swift in Sources */,
 				B8F1C4402BDED2B500674BDB /* CharacterRepositoryContract.swift in Sources */,
 				B8F1C4442BDEE4CF00674BDB /* GetCharactersUseCase.swift in Sources */,
 			);

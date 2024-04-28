@@ -15,7 +15,7 @@ class CharacterListViewModel {
     enum ViewState: Equatable {
         case clear
         case showLoader
-        case hideLoader
+        case updateList([CharacterListCell.Model])
     }
     
     struct UseCases {
@@ -46,9 +46,19 @@ extension CharacterListViewModel: CharacterListViewModelContract {
         viewState = .showLoader
         do {
             let characters = try await useCases.getAllCharacters.execute()
-            viewState = .hideLoader
+            viewState = .updateList(getCells(from: characters))
         } catch {
             print(error)
+        }
+    }
+}
+
+private extension CharacterListViewModel {
+    func getCells(from list: [CharacterModel]) -> [CharacterListCell.Model] {
+        list.compactMap { item in
+            CharacterListCell.Model(imageUrlString: item.url,
+                                    name: item.name,
+                                    id: item.id)
         }
     }
 }

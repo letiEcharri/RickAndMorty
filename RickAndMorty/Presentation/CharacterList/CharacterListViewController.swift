@@ -14,7 +14,29 @@ protocol CharacterListViewControllerContract: AnyObject {
 }
 
 class CharacterListViewController: UIViewController, ActivityIndicatorPresenter {
+    // MARK: - Views
+    private lazy var tableView: UITableView = {
+        let table = UITableView(frame: .zero, style: .grouped)
+        table.backgroundColor = .clear
+        table.rowHeight = UITableView.automaticDimension
+        table.separatorStyle = .none
+        table.showsVerticalScrollIndicator = false
+        table.bounces = false
+        table.delegate = self
+        table.dataSource = self
+
+        table.register(CharacterListCell.self, forCellReuseIdentifier: CharacterListCell.identifier)
+
+        return table
+    }()
+    
+    // MARK: - Properties
     var activityIndicator = UIActivityIndicatorView()
+    var cells: [CharacterListCell.Model] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     var viewModel: CharacterListViewModelContract
     
     // MARK: - Life cycle
@@ -44,19 +66,51 @@ class CharacterListViewController: UIViewController, ActivityIndicatorPresenter 
 
 private extension CharacterListViewController {
     func setupViews() {
+        title = "List"
         view.backgroundColor = .white
+        tableView.backgroundColor = .systemGroupedBackground
+        
+        tableView.fit(to: view, with: [
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
 }
 
+// MARK: Table Delegate & DataSource
+extension CharacterListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        cells.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CharacterListCell.identifier,
+                                                       for: indexPath) as? CharacterListCell else {
+            return UITableViewCell()
+        }
+        
+        let item = cells[indexPath.row]
+        cell.configure(with: item)
+        
+        return cell
+    }
+}
+
+// MARK: Contract
 extension CharacterListViewController: CharacterListViewControllerContract {
     func changeViewState(_ state: CharacterListViewModel.ViewState) {
-        switch state {
-        case .clear:
-            break
-        case .showLoader:
-            showActivityIndicator()
-        case .hideLoader:
-            hideActivityIndicator()
+        DispatchQueue.main.async {
+            self.hideActivityIndicator()
+            switch state {
+            case .clear:
+                break
+            case .showLoader:
+                self.showActivityIndicator()
+            case .updateList(let cells):
+                self.cells = cells
+            }
         }
     }
 }
