@@ -8,7 +8,11 @@
 import Foundation
 import RickMortySwiftApi
 
-class RMDataSource {
+protocol RMDataSourceContract {
+    func getCharacters() async throws -> [CharacterEntity]
+}
+
+class RMDataSource: RMDataSourceContract {
     private var client = RMClient()
     
     private var character: RMCharacter {

@@ -11,7 +11,7 @@ class CharacterRepository: BaseRepository, CharacterRepositoryContract {
     
     func getAllCharacters() async throws -> [CharacterModel] {
         do {
-            guard let request = try await request(client) as? RMDataSource else {
+            guard let request = try await request(client) as? RMDataSourceContract else {
                 throw NSError(domain: "", code: 0, userInfo: ["error": "Error with dataSource"])
             }
             

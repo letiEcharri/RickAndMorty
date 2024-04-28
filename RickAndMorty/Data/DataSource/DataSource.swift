@@ -8,7 +8,7 @@
 import Foundation
 
 enum DataClient {
-    case rickAndMorty
+    case rickAndMorty(RMDataSourceContract)
 }
 
 protocol DataSource {
@@ -18,8 +18,8 @@ protocol DataSource {
 extension DataSource {
     func request(_ client: DataClient) async throws -> AnyObject {
         switch client {
-        case .rickAndMorty:
-            return RMDataSource()
+        case .rickAndMorty(let dataSource):
+            return dataSource as AnyObject
         }
     }
 }
