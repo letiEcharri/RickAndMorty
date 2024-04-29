@@ -42,4 +42,11 @@ class CharacterRepositoryMock: CharacterRepositoryContract {
                            created: "")
         ]
     }
+    
+    func getCharacters(by pageNumber: Int) async throws -> [RickAndMorty.CharacterModel] {
+        if let error = error {
+            throw error
+        }
+        return try await getAllCharacters()
+    }
 }

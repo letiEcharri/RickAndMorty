@@ -42,4 +42,11 @@ class RMDataSourceMock: RMDataSourceContract {
                             created: "")
         ]
     }
+    
+    func getCharacters(by pageNumber: Int) async throws -> [CharacterEntity] {
+        if let error = error {
+            throw error
+        }
+        return try await getCharacters()
+    }
 }
