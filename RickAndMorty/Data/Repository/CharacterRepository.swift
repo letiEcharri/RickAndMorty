@@ -42,7 +42,7 @@ private extension CharacterRepository {
     func getCharacter(from entity: CharacterEntity) -> CharacterModel {
         CharacterModel(id: entity.id,
                        name: entity.name,
-                       status: entity.status,
+                       status: CharacterStatus(rawValue: entity.status) ?? .unknown,
                        species: entity.species,
                        type: entity.type,
                        gender: entity.gender,

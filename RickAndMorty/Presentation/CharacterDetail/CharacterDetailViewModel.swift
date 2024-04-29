@@ -14,6 +14,7 @@ protocol CharacterDetailViewModelContract {
 class CharacterDetailViewModel {
     enum ViewState: Equatable {
         case clear
+        case update(CharacterDetailViewController.Model)
     }
     
     var viewState: ViewState = .clear {
@@ -37,6 +38,12 @@ class CharacterDetailViewModel {
 
 extension CharacterDetailViewModel: CharacterDetailViewModelContract {
     func viewDidLoad() {
-        
+        viewState = .update(CharacterDetailViewController.Model(imageUrlString: character.image,
+                                                                name: character.name, 
+                                                                species: character.species,
+                                                                status: .init(rawValue: character.status.rawValue) ?? .unknown,
+                                                                location: character.location.name,
+                                                                episodes: character.episode, 
+                                                                gender: character.gender))
     }
 }

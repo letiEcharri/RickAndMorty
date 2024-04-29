@@ -10,7 +10,7 @@ import Foundation
 struct CharacterModel {
     let id: Int
     let name: String
-    let status: String
+    let status: CharacterStatus
     let species: String
     let type: String
     let gender: String
@@ -30,4 +30,10 @@ struct CharacterOriginModel: Codable {
 struct CharacterLocationModel: Codable {
     let name: String
     let url: String
+}
+
+enum CharacterStatus: String {
+    case alive = "Alive"
+    case dead = "Dead"
+    case unknown
 }
