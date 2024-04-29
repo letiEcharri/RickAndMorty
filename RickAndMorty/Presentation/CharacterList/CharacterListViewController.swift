@@ -24,16 +24,21 @@ class CharacterListViewController: UIViewController, ActivityIndicatorPresenter 
         table.bounces = false
         table.delegate = self
         table.dataSource = self
+        table.tableFooterView?.isHidden = true
 
         table.register(CharacterListCell.self, forCellReuseIdentifier: CharacterListCell.identifier)
 
         return table
     }()
     
+    private let cellSpinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+    
     // MARK: - Properties
     var activityIndicator = UIActivityIndicatorView()
     var cells: [CharacterListCell.Model] = [] {
         didSet {
+            cellSpinner.stopAnimating()
+            tableView.tableFooterView?.isHidden = true
             tableView.reloadData()
         }
     }
@@ -95,6 +100,21 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
         cell.configure(with: item)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let isReachedTheEnd = indexPath.section == tableView.numberOfSections - 1 &&
+        indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1
+        
+        if isReachedTheEnd {
+            cellSpinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
+            tableView.tableFooterView = cellSpinner
+            cellSpinner.startAnimating()
+            tableView.tableFooterView?.isHidden = false
+            Task {
+                await viewModel.getMoreCharacters()
+            }
+        }
     }
 }
 

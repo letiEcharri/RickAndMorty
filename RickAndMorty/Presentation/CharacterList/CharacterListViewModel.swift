@@ -9,6 +9,7 @@ import Foundation
 
 protocol CharacterListViewModelContract {
     func viewDidLoad() async
+    func getMoreCharacters() async
 }
 
 class CharacterListViewModel {
@@ -46,6 +47,10 @@ class CharacterListViewModel {
 extension CharacterListViewModel: CharacterListViewModelContract {
     func viewDidLoad() async {
         viewState = .showLoader
+        await getMoreCharacters()
+    }
+    
+    func getMoreCharacters() async {
         do {
             let newCharacters = try await useCases.getCharactersByPage.execute(by: pageName)
             characters.append(contentsOf: newCharacters)
