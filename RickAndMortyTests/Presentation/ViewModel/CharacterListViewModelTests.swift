@@ -30,4 +30,11 @@ final class CharacterListViewModelTests: XCTestCase {
         }
         XCTAssertEqual(sut.viewState, .updateList(characters))
     }
+    
+    func testDidItemSelect() async {
+        await sut.viewDidLoad()
+        sut.didSelect(1)
+        
+        XCTAssertTrue(coordinator.isNavigateToDetailCalled)
+    }
 }
