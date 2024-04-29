@@ -38,6 +38,7 @@
 		B8F1C46A2BDFB2EE00674BDB /* CoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4692BDFB2EE00674BDB /* CoordinatorMock.swift */; };
 		B8F1C4702BDFB3A400674BDB /* GetCharactersByPageNameUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C46F2BDFB3A400674BDB /* GetCharactersByPageNameUseCaseMock.swift */; };
 		B8F1C4722BDFB47F00674BDB /* GetCharactersByPageNameUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4712BDFB47F00674BDB /* GetCharactersByPageNameUseCaseTests.swift */; };
+		B8F1C4742BDFB56000674BDB /* CharacterListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4732BDFB56000674BDB /* CharacterListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		B8F1C4692BDFB2EE00674BDB /* CoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorMock.swift; sourceTree = "<group>"; };
 		B8F1C46F2BDFB3A400674BDB /* GetCharactersByPageNameUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersByPageNameUseCaseMock.swift; sourceTree = "<group>"; };
 		B8F1C4712BDFB47F00674BDB /* GetCharactersByPageNameUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersByPageNameUseCaseTests.swift; sourceTree = "<group>"; };
+		B8F1C4732BDFB56000674BDB /* CharacterListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +341,7 @@
 		B8F1C46C2BDFB36800674BDB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B8F1C4732BDFB56000674BDB /* CharacterListViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				B8F1C4702BDFB3A400674BDB /* GetCharactersByPageNameUseCaseMock.swift in Sources */,
 				B8F1C4722BDFB47F00674BDB /* GetCharactersByPageNameUseCaseTests.swift in Sources */,
 				B8F1C4482BDEEA8E00674BDB /* RMDataSourceMock.swift in Sources */,
+				B8F1C4742BDFB56000674BDB /* CharacterListViewModelTests.swift in Sources */,
 				B8F1C46A2BDFB2EE00674BDB /* CoordinatorMock.swift in Sources */,
 				B8F1C44F2BDEEF5C00674BDB /* GetCharactersUseCaseTests.swift in Sources */,
 				B8F1C44D2BDEEEAB00674BDB /* CharacterRepositoryMock.swift in Sources */,

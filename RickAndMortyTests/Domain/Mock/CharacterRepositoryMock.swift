@@ -10,12 +10,8 @@ import Foundation
 
 class CharacterRepositoryMock: CharacterRepositoryContract {
     var error: Error?
-    
-    func getAllCharacters() async throws -> [CharacterModel] {
-        if let error = error {
-            throw error
-        }
-        return [
+    var characters: [CharacterModel] {
+        [
             CharacterModel(id: 1,
                            name: "Rick",
                            status: "Alive",
@@ -41,6 +37,13 @@ class CharacterRepositoryMock: CharacterRepositoryContract {
                            url: "",
                            created: "")
         ]
+    }
+    
+    func getAllCharacters() async throws -> [CharacterModel] {
+        if let error = error {
+            throw error
+        }
+        return characters
     }
     
     func getCharacters(by pageNumber: Int) async throws -> [RickAndMorty.CharacterModel] {
