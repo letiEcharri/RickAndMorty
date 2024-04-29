@@ -40,6 +40,7 @@ class CharacterListCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = .boldSystemFont(ofSize: 15)
+        label.textColor = .darkGreenRM
 
         return label
     }()

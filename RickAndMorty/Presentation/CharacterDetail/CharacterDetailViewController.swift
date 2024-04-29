@@ -199,7 +199,7 @@ class CharacterDetailViewController: UIViewController {
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .clear
+        scrollView.backgroundColor = .lightGreenRM
         scrollView.showsVerticalScrollIndicator = false
         scrollView.bounces = false
 
@@ -233,14 +233,15 @@ class CharacterDetailViewController: UIViewController {
 
 private extension CharacterDetailViewController {
     func setupViews() {
-        title = "Detail"
-        view.backgroundColor = .systemGroupedBackground
+        title = "DETAIL"
+        view.backgroundColor = .darkGreenRM
         
         container.fit(to: containerView,
                       with: ConstraintsConstants(constant: LayoutConstants.containerPadding))
         containerView.fit(to: scrollView,
                           with: ConstraintsConstants(constant: LayoutConstants.padding))
-        scrollView.fit(to: view, safeAreaLayout: true)
+        scrollView.fit(to: view, with: .init(), position: .top, safeAreaLayout: true)
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         containerView.widthAnchor.constraint(equalTo: scrollView.widthAnchor,
                                              constant: -LayoutConstants.padding * 2).isActive = true
     }

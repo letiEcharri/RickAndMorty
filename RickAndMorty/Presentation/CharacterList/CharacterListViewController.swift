@@ -71,9 +71,9 @@ class CharacterListViewController: UIViewController, ActivityIndicatorPresenter 
 
 private extension CharacterListViewController {
     func setupViews() {
-        title = "Characters"
-        view.backgroundColor = .white
-        tableView.backgroundColor = .systemGroupedBackground
+        title = "CHARACTERS"
+        view.backgroundColor = .darkGreenRM
+        tableView.backgroundColor = .lightGreenRM
         
         tableView.fit(to: view, with: [
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),

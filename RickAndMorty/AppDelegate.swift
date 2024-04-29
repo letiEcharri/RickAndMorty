@@ -34,12 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func customizeNavigationBar() {
         let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.tintColor = .darkGray // Items
-        navigationBarAppearace.barTintColor = .white // Background
-        navigationBarAppearace.backgroundColor = .white
+        navigationBarAppearace.tintColor = .white // Items
+        navigationBarAppearace.barTintColor = .darkGreenRM
+        navigationBarAppearace.backgroundColor = .darkGreenRM // Background
         navigationBarAppearace.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20),
-            NSAttributedString.Key.foregroundColor: UIColor.darkGray
+            NSAttributedString.Key.foregroundColor: UIColor.white
         ] // Title
     }
 }

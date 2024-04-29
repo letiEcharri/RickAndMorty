@@ -41,6 +41,7 @@
 		B8F1C4742BDFB56000674BDB /* CharacterListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4732BDFB56000674BDB /* CharacterListViewModelTests.swift */; };
 		B8F1C4772BDFBBA900674BDB /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4762BDFBBA900674BDB /* CharacterDetailViewController.swift */; };
 		B8F1C4792BDFBBED00674BDB /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4782BDFBBED00674BDB /* CharacterDetailViewModel.swift */; };
+		B8F1C47B2BDFD2AA00674BDB /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C47A2BDFD2AA00674BDB /* UIColor+Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		B8F1C4732BDFB56000674BDB /* CharacterListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModelTests.swift; sourceTree = "<group>"; };
 		B8F1C4762BDFBBA900674BDB /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		B8F1C4782BDFBBED00674BDB /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
+		B8F1C47A2BDFD2AA00674BDB /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +323,7 @@
 				B8F1C4602BDF005700674BDB /* UIView+Utils.swift */,
 				B8F1C4622BDF085700674BDB /* UITableViewCell+Utils.swift */,
 				B8F1C4642BDF0D8400674BDB /* UIImageView+UrlImage.swift */,
+				B8F1C47A2BDFD2AA00674BDB /* UIColor+Colors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				B8F1C4342BDECC2A00674BDB /* CharacterEntity.swift in Sources */,
 				B8F1C4372BDECCE300674BDB /* CharacterRepository.swift in Sources */,
 				B8F1C43E2BDED24C00674BDB /* CharacterModel.swift in Sources */,
+				B8F1C47B2BDFD2AA00674BDB /* UIColor+Colors.swift in Sources */,
 				B8F1C42F2BDEC95600674BDB /* RMDataSource.swift in Sources */,
 				B8F1C3FA2BDEC2D400674BDB /* SceneDelegate.swift in Sources */,
 				B8F1C4652BDF0D8400674BDB /* UIImageView+UrlImage.swift in Sources */,
@@ -721,7 +725,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -750,7 +754,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
