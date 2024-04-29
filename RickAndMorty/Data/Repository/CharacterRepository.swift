@@ -10,21 +10,31 @@ import Foundation
 class CharacterRepository: BaseRepository, CharacterRepositoryContract {
     
     func getAllCharacters() async throws -> [CharacterModel] {
-        do {
-            guard let request = try await request(client) as? RMDataSourceContract else {
-                throw NSError(domain: "", code: 0, userInfo: ["error": "Error with dataSource"])
-            }
-            
-            let characters = try await request.getCharacters()
-            
-            let domainModel = characters.compactMap { character in
-                self.getCharacter(from: character)
-            }
-            
-            return domainModel
-        } catch {
-            throw error
+        guard let request = try await request(client) as? RMDataSourceContract else {
+            throw NSError(domain: "", code: 0, userInfo: ["error": "Error with dataSource"])
         }
+        
+        let characters = try await request.getCharacters()
+        
+        let domainModel = characters.compactMap { character in
+            self.getCharacter(from: character)
+        }
+        
+        return domainModel
+    }
+    
+    func getCharacters(by pageNumber: Int) async throws -> [CharacterModel] {
+        guard let request = try await request(client) as? RMDataSourceContract else {
+            throw NSError(domain: "", code: 0, userInfo: ["error": "Error with dataSource"])
+        }
+        
+        let characters = try await request.getCharacters(by: pageNumber)
+        
+        let domainModel = characters.compactMap { character in
+            self.getCharacter(from: character)
+        }
+        
+        return domainModel
     }
 }
 

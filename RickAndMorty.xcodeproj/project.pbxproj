@@ -34,6 +34,7 @@
 		B8F1C4612BDF005700674BDB /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4602BDF005700674BDB /* UIView+Utils.swift */; };
 		B8F1C4632BDF085700674BDB /* UITableViewCell+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4622BDF085700674BDB /* UITableViewCell+Utils.swift */; };
 		B8F1C4652BDF0D8400674BDB /* UIImageView+UrlImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4642BDF0D8400674BDB /* UIImageView+UrlImage.swift */; };
+		B8F1C4672BDFA9AD00674BDB /* GetCharactersByPageNameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4662BDFA9AD00674BDB /* GetCharactersByPageNameUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		B8F1C4602BDF005700674BDB /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		B8F1C4622BDF085700674BDB /* UITableViewCell+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Utils.swift"; sourceTree = "<group>"; };
 		B8F1C4642BDF0D8400674BDB /* UIImageView+UrlImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+UrlImage.swift"; sourceTree = "<group>"; };
+		B8F1C4662BDFA9AD00674BDB /* GetCharactersByPageNameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersByPageNameUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				B8F1C4432BDEE4CF00674BDB /* GetCharactersUseCase.swift */,
+				B8F1C4662BDFA9AD00674BDB /* GetCharactersByPageNameUseCase.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				B8F1C4612BDF005700674BDB /* UIView+Utils.swift in Sources */,
 				B8F1C4522BDEF24E00674BDB /* Coordinator.swift in Sources */,
 				B8F1C4572BDEF55E00674BDB /* CharacterListViewController.swift in Sources */,
+				B8F1C4672BDFA9AD00674BDB /* GetCharactersByPageNameUseCase.swift in Sources */,
 				B8F1C4392BDECDC000674BDB /* BaseRepository.swift in Sources */,
 				B8F1C42D2BDEC7FA00674BDB /* DataSource.swift in Sources */,
 				B8F1C45B2BDEFCD700674BDB /* ActivityIndicatorPresenter.swift in Sources */,

@@ -9,4 +9,5 @@ import Foundation
 
 protocol CharacterRepositoryContract {
     func getAllCharacters() async throws -> [CharacterModel]
+    func getCharacters(by pageNumber: Int) async throws -> [CharacterModel]
 }

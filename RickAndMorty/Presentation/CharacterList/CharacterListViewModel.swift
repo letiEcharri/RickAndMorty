@@ -19,7 +19,7 @@ class CharacterListViewModel {
     }
     
     struct UseCases {
-        let getAllCharacters: GetCharactersUseCaseContract
+        let getCharactersByPage: GetCharactersByPageNameUseCaseContract
     }
     
     var viewState: ViewState = .clear {
@@ -34,6 +34,7 @@ class CharacterListViewModel {
     weak private var coordinator: CoordinatorContract?
     weak var viewController: CharacterListViewControllerContract?
     private let useCases: UseCases
+    private var pageName = 1
     
     init(coordinator: CoordinatorContract, useCases: UseCases) {
         self.coordinator = coordinator
@@ -45,7 +46,7 @@ extension CharacterListViewModel: CharacterListViewModelContract {
     func viewDidLoad() async {
         viewState = .showLoader
         do {
-            let characters = try await useCases.getAllCharacters.execute()
+            let characters = try await useCases.getCharactersByPage.execute(by: pageName)
             viewState = .updateList(getCells(from: characters))
         } catch {
             print(error)
