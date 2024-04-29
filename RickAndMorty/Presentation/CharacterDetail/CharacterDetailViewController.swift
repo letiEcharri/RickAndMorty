@@ -197,6 +197,15 @@ class CharacterDetailViewController: UIViewController {
         return view
     }()
     
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = .clear
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.bounces = false
+
+        return scrollView
+    }()
+    
     // MARK: - Properties
     var viewModel: CharacterDetailViewModelContract
     
@@ -229,12 +238,11 @@ private extension CharacterDetailViewController {
         
         container.fit(to: containerView,
                       with: ConstraintsConstants(constant: LayoutConstants.containerPadding))
-        containerView.fit(to: view,
-                          with: ConstraintsConstants(constant: LayoutConstants.padding),
-                          position: .top,
-                          safeAreaLayout: true)
-        containerView.heightAnchor.constraint(equalTo: container.heightAnchor,
-                                              constant: LayoutConstants.containerPadding * 2).isActive = true
+        containerView.fit(to: scrollView,
+                          with: ConstraintsConstants(constant: LayoutConstants.padding))
+        scrollView.fit(to: view, safeAreaLayout: true)
+        containerView.widthAnchor.constraint(equalTo: scrollView.widthAnchor,
+                                             constant: -LayoutConstants.padding * 2).isActive = true
     }
     
     func setImage(with urlString: String) {
