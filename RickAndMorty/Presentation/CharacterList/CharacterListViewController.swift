@@ -71,7 +71,7 @@ class CharacterListViewController: UIViewController, ActivityIndicatorPresenter 
 
 private extension CharacterListViewController {
     func setupViews() {
-        title = "List"
+        title = "Characters"
         view.backgroundColor = .white
         tableView.backgroundColor = .systemGroupedBackground
         
@@ -100,6 +100,11 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
         cell.configure(with: item)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = cells[indexPath.row]
+        viewModel.didSelect(cell.id)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

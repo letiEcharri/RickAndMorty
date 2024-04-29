@@ -9,6 +9,7 @@ import UIKit
 
 protocol CoordinatorContract: AnyObject {
     func start()
+    func navigateToDetail(with character: CharacterModel) 
 }
 
 class Coordinator: CoordinatorContract {
@@ -23,6 +24,15 @@ class Coordinator: CoordinatorContract {
         navigationController = UINavigationController(rootViewController: getCharacterListView())
         navigationController?.modalPresentationStyle = .fullScreen
         window.rootViewController = navigationController
+    }
+    
+    func navigateToDetail(with character: CharacterModel) {
+        let viewModel = CharacterDetailViewModel(coordinator: self, character: character)
+        let view = CharacterDetailViewController(viewModel: viewModel)
+        viewModel.viewController = view
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(view, animated: true)
+        }
     }
 }
 

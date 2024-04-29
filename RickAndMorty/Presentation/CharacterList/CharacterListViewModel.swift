@@ -10,6 +10,7 @@ import Foundation
 protocol CharacterListViewModelContract {
     func viewDidLoad() async
     func getMoreCharacters() async
+    func didSelect(_ id: Int)
 }
 
 class CharacterListViewModel {
@@ -59,6 +60,12 @@ extension CharacterListViewModel: CharacterListViewModelContract {
         } catch {
             print(error)
             viewState = .clear
+        }
+    }
+    
+    func didSelect(_ id: Int) {
+        if let item = characters.first(where: { $0.id == id }) {
+            coordinator?.navigateToDetail(with: item)
         }
     }
 }
