@@ -60,6 +60,7 @@ class CharacterDetailViewController: UIViewController {
         label.numberOfLines = 0
         label.font = .boldSystemFont(ofSize: 30)
         label.textAlignment = .center
+        label.textColor = .darkGreenRM
 
         return label
     }()
@@ -77,6 +78,7 @@ class CharacterDetailViewController: UIViewController {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 20)
+        label.textColor = .darkGreenRM
 
         return label
     }()
@@ -97,6 +99,7 @@ class CharacterDetailViewController: UIViewController {
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 20)
         label.textAlignment = .center
+        label.textColor = .darkGreenRM
 
         return label
     }()
@@ -106,7 +109,7 @@ class CharacterDetailViewController: UIViewController {
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 20, weight: .light)
         label.textAlignment = .center
-        label.textColor = .lightGray
+        label.textColor = .turquoiseRM
         label.text = "Last known location:"
 
         return label
@@ -117,6 +120,7 @@ class CharacterDetailViewController: UIViewController {
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 20)
         label.textAlignment = .center
+        label.textColor = .darkGreenRM
 
         return label
     }()
@@ -126,7 +130,7 @@ class CharacterDetailViewController: UIViewController {
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 20, weight: .light)
         label.textAlignment = .center
-        label.textColor = .lightGray
+        label.textColor = .turquoiseRM
         label.text = "First seen in:"
 
         return label
@@ -137,6 +141,7 @@ class CharacterDetailViewController: UIViewController {
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 20)
         label.textAlignment = .center
+        label.textColor = .darkGreenRM
 
         return label
     }()
@@ -146,7 +151,7 @@ class CharacterDetailViewController: UIViewController {
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 20, weight: .light)
         label.textAlignment = .center
-        label.textColor = .lightGray
+        label.textColor = .turquoiseRM
         label.text = "Number of episodes:"
 
         return label
@@ -157,6 +162,7 @@ class CharacterDetailViewController: UIViewController {
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 20)
         label.textAlignment = .center
+        label.textColor = .darkGreenRM
 
         return label
     }()
