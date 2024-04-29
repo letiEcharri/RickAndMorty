@@ -9,8 +9,13 @@
 
 class CoordinatorMock: CoordinatorContract {
     var isStartCalled = false
+    var isNavigateToDetailCalled = false
     
     func start() {
         isStartCalled = true
+    }
+    
+    func navigateToDetail(with character: RickAndMorty.CharacterModel) {
+        isNavigateToDetailCalled = true
     }
 }

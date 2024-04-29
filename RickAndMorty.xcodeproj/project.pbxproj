@@ -42,6 +42,7 @@
 		B8F1C4772BDFBBA900674BDB /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4762BDFBBA900674BDB /* CharacterDetailViewController.swift */; };
 		B8F1C4792BDFBBED00674BDB /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C4782BDFBBED00674BDB /* CharacterDetailViewModel.swift */; };
 		B8F1C47B2BDFD2AA00674BDB /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C47A2BDFD2AA00674BDB /* UIColor+Colors.swift */; };
+		B8F1C47D2BDFDA3F00674BDB /* CharacterDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C47C2BDFDA3F00674BDB /* CharacterDetailViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		B8F1C4762BDFBBA900674BDB /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		B8F1C4782BDFBBED00674BDB /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		B8F1C47A2BDFD2AA00674BDB /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
+		B8F1C47C2BDFDA3F00674BDB /* CharacterDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				B8F1C4732BDFB56000674BDB /* CharacterListViewModelTests.swift */,
+				B8F1C47C2BDFDA3F00674BDB /* CharacterDetailViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8F1C44A2BDEEBB600674BDB /* CharacterRepositoryTests.swift in Sources */,
+				B8F1C47D2BDFDA3F00674BDB /* CharacterDetailViewModelTests.swift in Sources */,
 				B8F1C4702BDFB3A400674BDB /* GetCharactersByPageNameUseCaseMock.swift in Sources */,
 				B8F1C4722BDFB47F00674BDB /* GetCharactersByPageNameUseCaseTests.swift in Sources */,
 				B8F1C4482BDEEA8E00674BDB /* RMDataSourceMock.swift in Sources */,

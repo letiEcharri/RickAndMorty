@@ -14,7 +14,7 @@ class CharacterRepositoryMock: CharacterRepositoryContract {
         [
             CharacterModel(id: 1,
                            name: "Rick",
-                           status: "Alive",
+                           status: .alive,
                            species: "Human",
                            type: "",
                            gender: "Male",
@@ -26,7 +26,7 @@ class CharacterRepositoryMock: CharacterRepositoryContract {
                            created: ""),
             CharacterModel(id: 2,
                            name: "Morty",
-                           status: "Alive",
+                           status: .alive,
                            species: "Human",
                            type: "",
                            gender: "Male",
