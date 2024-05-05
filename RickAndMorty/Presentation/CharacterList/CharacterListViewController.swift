@@ -71,8 +71,11 @@ class CharacterListViewController: UIViewController, ActivityIndicatorPresenter 
     private let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - Properties
+    private var isSearchActive: Bool {
+        searchBar.text != nil && !searchBar.text!.isEmpty
+    }
     var activityIndicator = UIActivityIndicatorView()
-    var cells: [CharacterListCell.Model] = [] {
+    private var cells: [CharacterListCell.Model] = [] {
         didSet {
             cellSpinner.stopAnimating()
             tableView.tableFooterView?.isHidden = true
@@ -155,13 +158,13 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
         let isReachedTheEnd = indexPath.section == tableView.numberOfSections - 1 &&
         indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1
         
-        if isReachedTheEnd {
+        if isReachedTheEnd, !isSearchActive {
             cellSpinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
             tableView.tableFooterView = cellSpinner
             cellSpinner.startAnimating()
             tableView.tableFooterView?.isHidden = false
             Task {
-                await viewModel.getMoreCharacters()
+                await viewModel.search(name: "", isSearchActive: isSearchActive)
             }
         }
     }
@@ -170,8 +173,12 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
 // MARK: Search Bar Delegate
 extension CharacterListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let text = searchBar.text {
-            viewModel.search(name: text)
+        Task {
+            let text = searchBar.text ?? ""
+            if !text.isEmpty {
+                searchBar.searchTextField.resignFirstResponder()
+            }
+            await viewModel.search(name: text, isSearchActive: isSearchActive)
         }
     }
 }

@@ -9,9 +9,8 @@ import Foundation
 
 protocol CharacterListViewModelContract {
     func viewDidLoad() async
-    func getMoreCharacters() async
     func didSelect(_ id: Int)
-    func search(name: String)
+    func search(name: String, isSearchActive: Bool) async
 }
 
 class CharacterListViewModel {
@@ -23,13 +22,11 @@ class CharacterListViewModel {
     
     struct UseCases {
         let getCharactersByPage: GetCharactersByPageNameUseCaseContract
+        let getCharactersByName: GetCharactersByNameUseCaseContract
     }
     
     var viewState: ViewState = .clear {
         didSet {
-            guard oldValue != viewState else {
-                preconditionFailure("If states were correctly implemented, this wouldn't have happened. 😒")
-            }
             viewController?.changeViewState(viewState)
         }
     }
@@ -52,26 +49,23 @@ extension CharacterListViewModel: CharacterListViewModelContract {
         await getMoreCharacters()
     }
     
-    func getMoreCharacters() async {
-        do {
-            let newCharacters = try await useCases.getCharactersByPage.execute(by: pageName)
-            characters.append(contentsOf: newCharacters)
-            pageName += 1
-            viewState = .updateList(getCells(from: characters))
-        } catch {
-            print(error)
-            viewState = .clear
-        }
-    }
-    
     func didSelect(_ id: Int) {
         if let item = characters.first(where: { $0.id == id }) {
             coordinator?.navigateToDetail(with: item)
         }
     }
     
-    func search(name: String) {
-        print(name)
+    func search(name: String, isSearchActive: Bool) async {
+        if isSearchActive, !name.isEmpty {
+            guard let newCharacters = try? await useCases.getCharactersByName.execute(name: name) else {
+                return
+            }
+            pageName = 1
+            characters = newCharacters
+            viewState = .updateList(getCells(from: characters))
+        } else {
+            await getMoreCharacters()
+        }
     }
 }
 
@@ -81,6 +75,18 @@ private extension CharacterListViewModel {
             CharacterListCell.Model(imageUrlString: item.image,
                                     name: item.name,
                                     id: item.id)
+        }
+    }
+    
+    func getMoreCharacters() async {
+        do {
+            let newCharacters = try await useCases.getCharactersByPage.execute(by: pageName)
+            characters.append(contentsOf: newCharacters)
+            pageName += 1
+            viewState = .updateList(getCells(from: characters))
+        } catch {
+            print(error)
+            viewState = .clear
         }
     }
 }

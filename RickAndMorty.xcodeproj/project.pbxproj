@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B828A50D2BE7FE6100D37FD1 /* GetCharactersByNameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828A50C2BE7FE6100D37FD1 /* GetCharactersByNameUseCase.swift */; };
 		B8F1C3F82BDEC2D400674BDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C3F72BDEC2D400674BDB /* AppDelegate.swift */; };
 		B8F1C3FA2BDEC2D400674BDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C3F92BDEC2D400674BDB /* SceneDelegate.swift */; };
 		B8F1C4012BDEC2D700674BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F1C4002BDEC2D700674BDB /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B828A50C2BE7FE6100D37FD1 /* GetCharactersByNameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersByNameUseCase.swift; sourceTree = "<group>"; };
 		B8F1C3F42BDEC2D400674BDB /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F1C3F72BDEC2D400674BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8F1C3F92BDEC2D400674BDB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			children = (
 				B8F1C4432BDEE4CF00674BDB /* GetCharactersUseCase.swift */,
 				B8F1C4662BDFA9AD00674BDB /* GetCharactersByPageNameUseCase.swift */,
+				B828A50C2BE7FE6100D37FD1 /* GetCharactersByNameUseCase.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				B8F1C4632BDF085700674BDB /* UITableViewCell+Utils.swift in Sources */,
 				B8F1C4342BDECC2A00674BDB /* CharacterEntity.swift in Sources */,
 				B8F1C4372BDECCE300674BDB /* CharacterRepository.swift in Sources */,
+				B828A50D2BE7FE6100D37FD1 /* GetCharactersByNameUseCase.swift in Sources */,
 				B8F1C43E2BDED24C00674BDB /* CharacterModel.swift in Sources */,
 				B8F1C47B2BDFD2AA00674BDB /* UIColor+Colors.swift in Sources */,
 				B8F1C42F2BDEC95600674BDB /* RMDataSource.swift in Sources */,

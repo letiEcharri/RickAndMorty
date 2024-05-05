@@ -41,8 +41,10 @@ private extension Coordinator {
         let dataSource = RMDataSource()
         let repository = CharacterRepository(.rickAndMorty(dataSource))
         let getCharactersByPageUseCase = GetCharactersByPageNameUseCase(repository: repository)
+        let getCharactersByNameUseCase = GetCharactersByNameUseCase(repository: repository)
         let viewModel = CharacterListViewModel(coordinator: self,
-                                               useCases: CharacterListViewModel.UseCases(getCharactersByPage: getCharactersByPageUseCase))
+                                               useCases: CharacterListViewModel.UseCases(getCharactersByPage: getCharactersByPageUseCase, 
+                                                                                         getCharactersByName: getCharactersByNameUseCase))
         let view = CharacterListViewController(viewModel: viewModel)
         viewModel.viewController = view
         return view
