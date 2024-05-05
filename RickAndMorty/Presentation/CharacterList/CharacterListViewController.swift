@@ -53,6 +53,8 @@ class CharacterListViewController: UIViewController, ActivityIndicatorPresenter 
             string: "Search",
             attributes: [.foregroundColor: UIColor.lightGray]
         )
+        bar.setShowsCancelButton(true, animated: true)
+        bar.tintColor = .darkGreenRM
     
         return bar
     }()
@@ -179,6 +181,16 @@ extension CharacterListViewController: UISearchBarDelegate {
                 searchBar.searchTextField.resignFirstResponder()
             }
             await viewModel.search(name: text, isSearchActive: isSearchActive)
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.searchTextField.resignFirstResponder()
+        Task {
+            let text = searchBar.text ?? ""
+            if text.isEmpty {
+                await viewModel.search(name: "", isSearchActive: isSearchActive)
+            }
         }
     }
 }

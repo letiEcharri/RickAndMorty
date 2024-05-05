@@ -64,6 +64,9 @@ extension CharacterListViewModel: CharacterListViewModelContract {
             characters = newCharacters
             viewState = .updateList(getCells(from: characters))
         } else {
+            if pageName == 1 {
+                characters = []
+            }
             await getMoreCharacters()
         }
     }
