@@ -32,6 +32,7 @@ class CharacterListViewController: UIViewController, ActivityIndicatorPresenter 
     }()
     
     private let cellSpinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+    private let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - Properties
     var activityIndicator = UIActivityIndicatorView()
@@ -81,6 +82,25 @@ private extension CharacterListViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+        
+        searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.tintColor = .white
+        definesPresentationContext = true
+        navigationItem.searchController = searchController
+        
+        UITextField
+            .appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = 
+        [
+                NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
+        searchController.searchBar.searchTextField.layer.borderColor = UIColor.white.cgColor
+        searchController.searchBar.searchTextField.layer.borderWidth = 1
+        searchController.searchBar.searchTextField.layer.cornerRadius = 10
+        searchController.searchBar.searchTextField.leftView?.tintColor = .white
+
     }
 }
 
@@ -120,6 +140,13 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
                 await viewModel.getMoreCharacters()
             }
         }
+    }
+}
+
+// MARK: Search Delegate
+extension CharacterListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        print("Search text : \(searchController.searchBar.text!)")
     }
 }
 
