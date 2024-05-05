@@ -14,6 +14,12 @@ protocol CharacterListViewControllerContract: AnyObject {
 }
 
 class CharacterListViewController: UIViewController, ActivityIndicatorPresenter {
+    private struct LayoutConstants {
+        static let searchBarBorderWidth: CGFloat = 1
+        static let searchBarCornerRadius: CGFloat = 10
+        static let searchBarViewHeight: CGFloat = 56
+    }
+    
     // MARK: - Views
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -25,10 +31,40 @@ class CharacterListViewController: UIViewController, ActivityIndicatorPresenter 
         table.delegate = self
         table.dataSource = self
         table.tableFooterView?.isHidden = true
+        table.backgroundColor = .lightGreenRM
 
         table.register(CharacterListCell.self, forCellReuseIdentifier: CharacterListCell.identifier)
 
         return table
+    }()
+    
+    private lazy var searchBar: UISearchBar =  {
+        let bar = UISearchBar()
+        bar.backgroundColor = .lightGreenRM
+        bar.searchBarStyle = .default
+        bar.sizeToFit()
+        bar.backgroundImage = UIImage()
+        bar.delegate = self
+        bar.searchTextField.layer.borderColor = UIColor.darkGreenRM.cgColor
+        bar.searchTextField.layer.borderWidth = LayoutConstants.searchBarBorderWidth
+        bar.searchTextField.layer.cornerRadius = LayoutConstants.searchBarCornerRadius
+        bar.searchTextField.leftView?.tintColor = .darkGreenRM
+        bar.searchTextField.attributedPlaceholder = NSAttributedString(
+            string: "Search",
+            attributes: [.foregroundColor: UIColor.lightGray]
+        )
+    
+        return bar
+    }()
+    
+    private lazy var searchView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.addSubview(searchBar)
+        view.heightAnchor.constraint(equalToConstant: LayoutConstants.searchBarViewHeight)
+            .isActive = true
+        
+        return view
     }()
     
     private let cellSpinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
@@ -74,33 +110,21 @@ private extension CharacterListViewController {
     func setupViews() {
         title = "CHARACTERS"
         view.backgroundColor = .darkGreenRM
-        tableView.backgroundColor = .lightGreenRM
+        
+        searchView.fit(to: view, with: .init(), position: .top, safeAreaLayout: true)
         
         tableView.fit(to: view, with: [
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.topAnchor.constraint(equalTo: searchView.bottomAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
-        searchController.searchResultsUpdater = self
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
-        searchController.searchBar.tintColor = .white
-        definesPresentationContext = true
-        navigationItem.searchController = searchController
-        
         UITextField
-            .appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = 
+            .appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes =
         [
-                NSAttributedString.Key.foregroundColor: UIColor.white
+                NSAttributedString.Key.foregroundColor: UIColor.darkGreenRM
         ]
-        searchController.searchBar.searchTextField.layer.borderColor = UIColor.white.cgColor
-        searchController.searchBar.searchTextField.layer.borderWidth = 1
-        searchController.searchBar.searchTextField.layer.cornerRadius = 10
-        searchController.searchBar.searchTextField.leftView?.tintColor = .white
-
     }
 }
 
@@ -144,9 +168,9 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
 }
 
 // MARK: Search Delegate
-extension CharacterListViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        print("Search text : \(searchController.searchBar.text!)")
+extension CharacterListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("Search text: \(searchBar.text!)")
     }
 }
 
