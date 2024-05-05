@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B828A50D2BE7FE6100D37FD1 /* GetCharactersByNameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828A50C2BE7FE6100D37FD1 /* GetCharactersByNameUseCase.swift */; };
 		B828A50F2BE80E8200D37FD1 /* GetCharactersByNameUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828A50E2BE80E8200D37FD1 /* GetCharactersByNameUseCaseMock.swift */; };
+		B828A5112BE810CD00D37FD1 /* GetCharactersByNameUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828A5102BE810CD00D37FD1 /* GetCharactersByNameUseCaseTests.swift */; };
 		B8F1C3F82BDEC2D400674BDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C3F72BDEC2D400674BDB /* AppDelegate.swift */; };
 		B8F1C3FA2BDEC2D400674BDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1C3F92BDEC2D400674BDB /* SceneDelegate.swift */; };
 		B8F1C4012BDEC2D700674BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F1C4002BDEC2D700674BDB /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		B828A50C2BE7FE6100D37FD1 /* GetCharactersByNameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersByNameUseCase.swift; sourceTree = "<group>"; };
 		B828A50E2BE80E8200D37FD1 /* GetCharactersByNameUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersByNameUseCaseMock.swift; sourceTree = "<group>"; };
+		B828A5102BE810CD00D37FD1 /* GetCharactersByNameUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersByNameUseCaseTests.swift; sourceTree = "<group>"; };
 		B8F1C3F42BDEC2D400674BDB /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F1C3F72BDEC2D400674BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8F1C3F92BDEC2D400674BDB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			children = (
 				B8F1C44E2BDEEF5C00674BDB /* GetCharactersUseCaseTests.swift */,
 				B8F1C4712BDFB47F00674BDB /* GetCharactersByPageNameUseCaseTests.swift */,
+				B828A5102BE810CD00D37FD1 /* GetCharactersByNameUseCaseTests.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				B8F1C4742BDFB56000674BDB /* CharacterListViewModelTests.swift in Sources */,
 				B8F1C46A2BDFB2EE00674BDB /* CoordinatorMock.swift in Sources */,
 				B8F1C44F2BDEEF5C00674BDB /* GetCharactersUseCaseTests.swift in Sources */,
+				B828A5112BE810CD00D37FD1 /* GetCharactersByNameUseCaseTests.swift in Sources */,
 				B8F1C44D2BDEEEAB00674BDB /* CharacterRepositoryMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
