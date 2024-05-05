@@ -11,6 +11,7 @@ protocol CharacterListViewModelContract {
     func viewDidLoad() async
     func getMoreCharacters() async
     func didSelect(_ id: Int)
+    func search(name: String)
 }
 
 class CharacterListViewModel {
@@ -67,6 +68,10 @@ extension CharacterListViewModel: CharacterListViewModelContract {
         if let item = characters.first(where: { $0.id == id }) {
             coordinator?.navigateToDetail(with: item)
         }
+    }
+    
+    func search(name: String) {
+        print(name)
     }
 }
 

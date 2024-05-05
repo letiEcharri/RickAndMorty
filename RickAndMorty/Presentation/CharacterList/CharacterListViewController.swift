@@ -167,10 +167,12 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
     }
 }
 
-// MARK: Search Delegate
+// MARK: Search Bar Delegate
 extension CharacterListViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Search text: \(searchBar.text!)")
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            viewModel.search(name: text)
+        }
     }
 }
 
